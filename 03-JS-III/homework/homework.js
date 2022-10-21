@@ -10,7 +10,7 @@ function imprimirSumaNumeros() {
     // Tu código:
     let suma= 0;
     for(let i= 1; i <= 10; i++){
-      suma = suma + i;
+      suma += i;
     }
   return suma;
 }
@@ -19,30 +19,47 @@ function encuentraPares(array){
   // Devuelve un arreglo con los pares encontrados
   // en el arreglo de enteros pasado como parámetro
   // Tu código:
-
+  let acc=[];
+  let indice= 0;
+  while(indice < array.length){
+    if(array[indice] % 2 === 0){
+      acc.push(array[indice]);
+    }
+    indice++;
+  }
+  return acc;
 }
 
 function elevaAlCuadrado(array){
   // Devuelve un arreglo con cada número del array
   // elevado al cuadrado
   // Tu código:
+  return array.map(function(num){
+    return Math.pow(num,2);
+  });
 }
 
 function sumaArray(array){
   // Devuelve el resultado de sumar todos los elementos
   // de un arreglo de enteros dado
   // Tu código:
+  let suma = array.reduce(function(acc,num){
+    return acc + num;
+  }, 0)
+  return suma;
 }
 
 function numeroDigitos(num){
   // Devuelve el número de dígitos de un número dado
   // Tu código:
+  let numeroAString = num.toString();
+  return numeroAString.length;
 }
-  
-  
+
+
   // No modificar nada debajo de esta línea
   // --------------------------------
-  
+
   module.exports = {
     imprimirSumaNumeros,
     encuentraPares,
